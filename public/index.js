@@ -1,3 +1,5 @@
+console.log("Hello!")
+
 let transactions = [];
 let myChart;
 
