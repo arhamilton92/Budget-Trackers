@@ -1,5 +1,3 @@
-console.log("Service worker, at your service!")
-
 const FILES_TO_CACHE = [
     "/",
     "/index.html",
@@ -17,7 +15,7 @@ const CACHE_NAME = "static-cache-v1";
 const DATA_CACHE_NAME = "data-cache-v1";
 
 // install
-    self.addEventListener("install", function (evt) {
+self.addEventListener("install", function (evt) {
     evt.waitUntil(
         caches
         .open(CACHE_NAME)
@@ -58,7 +56,7 @@ self.addEventListener("activate", function (evt) {
     );
 
     self.clients.claim();
-});
+    });
 
 // fetch
 self.addEventListener("fetch", function (evt) {
@@ -84,7 +82,7 @@ self.addEventListener("fetch", function (evt) {
             .catch((err) => console.log(err))
         );
 
-    return;
+        return;
     }
 
     evt.respondWith(
